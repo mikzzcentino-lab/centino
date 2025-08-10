@@ -34,6 +34,7 @@ void listFiles(){
 		cout<<"Enter choice: ";
 		cin>>choice;
 	}while(!(choice >= 1 && choice <= 3));
+		
 	
 	switch(choice){
 	   	case 1: 
@@ -57,7 +58,7 @@ void listFiles(){
 	 			  }
 				}
 		break;
-		case 3:
+			case 3:
 			cout<<"List Pattern: ";
 	        for(const auto& entry : fs::directory_iterator(path)){
 	 			if(fs::is_regular_file(entry)){
@@ -71,7 +72,6 @@ void listFiles(){
 		break;
 	}
 }
-
 void createDirectory(){
 	string createDirectoryName;
 	cout << "Enter directory name: ";
@@ -101,7 +101,8 @@ void changeDirectory(){
 		cin>>choice;
 	}while(!(choice >= 1 && choice <= 4));
 
-	switch(choice){
+
+		switch(choice){
 		case 1: {
 			fs::path parentPath = currentPath.parent_path();
 			if(_chdir(parentPath.string().c_str()) == 0){
